@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/06/2024 10:37:51" ReportInfo.Modified="10/11/2024 17:15:25" ReportInfo.CreatorVersion="2024.2.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Comissao" ReferenceName="Comissao" DataType="System.Int32" Enabled="true">
+      <Column Name="Id" DataType="System.Int32"/>
+      <Column Name="DtGeracao" DataType="System.DateTime"/>
+      <Column Name="DtPrevisao" DataType="System.DateTime"/>
+      <BusinessObjectDataSource Name="ComissaoDetalhe" ReferenceName="ComissaoDetalhe" DataType="System.Int32" Enabled="true">
+        <Column Name="Produto" DataType="System.String"/>
+        <Column Name="Corretor" DataType="System.String"/>
+        <Column Name="DtCadastro" DataType="System.DateTime"/>
+        <Column Name="DtAssinatura" DataType="System.DateTime"/>
+        <Column Name="DtVigencia" DataType="System.DateTime"/>
+        <Column Name="Proposta" DataType="System.Int32"/>
+        <Column Name="Parcela" DataType="System.Int32"/>
+        <Column Name="VlParcela" DataType="System.Decimal"/>
+        <Column Name="Parcela" DataType="System.Int32"/>
+        <Column Name="VlBruto" DataType="System.Decimal"/>
+        <Column Name="Taxa" DataType="System.Decimal"/>
+        <Column Name="Adm" DataType="System.Int32"/>
+        <Column Name="DescAdm" DataType="System.Decimal"/>
+        <Column Name="ISS" DataType="System.Decimal"/>
+        <Column Name="Liquido" DataType="System.Decimal"/>
+      </BusinessObjectDataSource>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="350" Guides="0" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1247.4" Height="37.8">
+      <TextObject Name="Text3" Left="1115.1" Top="9.45" Width="94.5" Height="18.9" Text="[Date]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="18.9" Top="9.45" Width="94.5" Height="18.9" Text="Extrato" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="43.13" Width="1247.4" Height="151.2" DataSource="Comissao">
+      <TextObject Name="Text5" Left="198.45" Top="28.35" Width="103.95" Height="18.9" Text="[Comissao.Id]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="28.35" Top="28.35" Width="160.65" Height="18.9" Text="Código da Comissão:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="28.35" Top="56.7" Width="160.65" Height="18.9" Text="Geração:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="378" Top="56.7" Width="85.05" Height="18.9" Text="Previsão:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="198.45" Top="56.7" Width="151.2" Height="18.9" Text="[Comissao.DtGeracao]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="472.5" Top="56.7" Width="160.65" Height="18.9" Text="[Comissao.DtPrevisao]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+      <SubreportObject Name="Subreport1" Left="18.9" Top="113.4" Width="9.45" ReportPage="Page2"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="199.67" Width="1247.4" Height="18.9">
+      <TextObject Name="Text2" Left="28.35" Width="340.2" Height="18.9" Text="Gerado por SisWeb 3.0 - Trindade Tecnologia" Font="Arial, 10pt"/>
+      <TextObject Name="Text42" Left="1115.1" Width="94.5" Height="18.9" Text="[PageNofM]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+  <ReportPage Name="Page2" PaperWidth="350" PaperHeight="100" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data2" Width="1247.4" Height="37.8" DataSource="ComissaoDetalhe">
+      <TextObject Name="Text14" Width="245.7" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="[Comissao.ComissaoDetalhe.Produto]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text15" Left="245.7" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Cadastro" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text16" Left="340.2" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Assinatura" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text17" Left="434.7" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Vigência" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text18" Left="529.2" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Proposta" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text19" Left="623.7" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Parc." HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text20" Left="680.4" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Vl Parcela" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text21" Left="774.9" Width="28.35" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="%" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text22" Left="803.25" Width="85.05" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Bruto" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text23" Left="888.3" Width="66.15" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Taxa" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text24" Left="954.45" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="% Adm" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text25" Left="1011.15" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Desp. Adm" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text26" Left="1105.65" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="ISS" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text27" Left="1162.35" Width="66.15" Height="18.9" Border.Lines="All" Fill.Color="DarkGray" Text="Líquido" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text28" Top="18.9" Width="245.7" Height="18.9" Text="[Comissao.ComissaoDetalhe.Corretor]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text29" Left="245.7" Top="18.9" Width="94.5" Height="18.9" Text="[Comissao.ComissaoDetalhe.DtCadastro]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text30" Left="340.2" Top="18.9" Width="94.5" Height="18.9" Text="[Comissao.ComissaoDetalhe.DtAssinatura]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text31" Left="434.7" Top="18.9" Width="94.5" Height="18.9" Text="[Comissao.ComissaoDetalhe.DtVigencia]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text32" Left="529.2" Top="18.9" Width="94.5" Height="18.9" Text="[Comissao.ComissaoDetalhe.Proposta]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text33" Left="623.7" Top="18.9" Width="56.7" Height="18.9" Text="[Comissao.ComissaoDetalhe.Parcela]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text34" Left="680.4" Top="18.9" Width="94.5" Height="18.9" Text="[Comissao.ComissaoDetalhe.VlParcela]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text35" Left="803.25" Top="18.9" Width="85.05" Height="18.9" Text="[Comissao.ComissaoDetalhe.VlBruto]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text36" Left="888.3" Top="18.9" Width="66.15" Height="18.9" Text="[Comissao.ComissaoDetalhe.Taxa]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text37" Left="954.45" Top="18.9" Width="56.7" Height="18.9" Text="[Comissao.ComissaoDetalhe.Adm]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text38" Left="1011.15" Top="18.9" Width="94.5" Height="18.9" Text="[Comissao.ComissaoDetalhe.DescAdm]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text39" Left="1105.65" Top="18.9" Width="56.7" Height="18.9" Text="[Comissao.ComissaoDetalhe.ISS]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text40" Left="1162.35" Top="18.9" Width="66.15" Height="18.9" Text="[Comissao.ComissaoDetalhe.Liquido]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+  </ReportPage>
+</Report>

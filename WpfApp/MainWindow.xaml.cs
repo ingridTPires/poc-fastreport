@@ -19,8 +19,57 @@ namespace WpfApp
             new Users() { Id = 1, Name = "Ana" },
             new Users() { Id = 2, Name = "Lucas" }
         };
-        private const string BusinessObjectDataSource = "Users";
-        private const string Design = "designtable.frx";
+        private const string BusinessObjectDataSource = "Comissao";
+        private const string Design = "recibo-comissao.frx";
+
+        private List<Comissao> _comissoes = new List<Comissao>()
+        {
+            new Comissao()
+            {
+                Id = 234324,
+                DtGeracao = DateTime.Now,
+                DtPrevisao = DateTime.Now,
+                ComissaoDetalhe = new List<ComissaoDetalhe>()
+                {
+                    new ComissaoDetalhe()
+                    {
+                        Produto = "Amil - PME",
+                        Corretor = "Renata Maria",
+                        DtCadastro = DateTime.Now,
+                        DtAssinatura = DateTime.Now,
+                        DtVigencia = DateTime.Now,
+                        Proposta = 98798,
+                        Parcela = 67,
+                        VlParcela = 5977,
+                        Porcentagem = 2,
+                        VlBruto = 103.99m,
+                        Taxa = 0,
+                        Adm = -10,
+                        DescAdm = -10.40m,
+                        ISS = 0,
+                        Liquido = 93.59m
+                    },
+                    new ComissaoDetalhe()
+                    {
+                        Produto = "GNDI - PME",
+                        Corretor = "Morales",
+                        DtCadastro = DateTime.Now,
+                        DtAssinatura = DateTime.Now,
+                        DtVigencia = DateTime.Now,
+                        Proposta = 337671,
+                        Parcela = 48,
+                        VlParcela = 1465.08m,
+                        Porcentagem = 2,
+                        VlBruto = 29.30m,
+                        Taxa = 0,
+                        Adm = -10,
+                        DescAdm = -2.93m,
+                        ISS = 0,
+                        Liquido = 26.37m
+                    }
+                }
+            }
+        };
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +81,7 @@ namespace WpfApp
             var report = new Report();
             report.Load(Design);
 
-            report.Dictionary.RegisterBusinessObject(_users, BusinessObjectDataSource, 10, true);
+            report.Dictionary.RegisterBusinessObject(_comissoes, BusinessObjectDataSource, 10, true);
 
             if (report.Prepare())
             {
